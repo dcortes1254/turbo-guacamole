@@ -1,0 +1,21 @@
+*{
+    margin: 30;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:aqua;
+}
+ header, main, footer {
+    padding: 20px;
+    margin: 10px;
+ }
+header {
+    background-color:lightblue;
+}
+
+main{
+    background-color:lightgreen;
+}
+
+footer{
+    background-color: lightcoral;
+}
