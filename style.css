@@ -1,21 +1,92 @@
-*{
-    margin: 30;
-    padding: 0;
-    box-sizing: border-box;
-    background-color:aqua;
-}
- header, main, footer {
-    padding: 20px;
-    margin: 10px;
- }
-header {
-    background-color:lightblue;
+body {
+    margin: 0;
+    font-family: 'Arial', 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #ff9966 0%, #ff5e62 25%, #845ec2 60%, #007BFF 100%);
 }
 
-main{
-    background-color:lightgreen;
+.container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 0 16px;
 }
 
-footer{
-    background-color: lightcoral;
+.header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.header h1 {
+    color: #007BFF;
+    font-size: 2.2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.slogan {
+    color: #333;
+    font-size: 1.1em;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+.card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+}
+
+.operation {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.op {
+    margin: 8px;
+    color: #007BFF;
+}
+
+.input-answer {
+    width: 80%;
+    padding: 8px;
+    font-size: 1.1em;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.btn {
+    background: #007BFF;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 24px;
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+.feedback {
+    font-size: 1.1em;
+}
+
+.success {
+    color: #28A745;
+}
+
+.danger {
+    color: #DC3545;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 32px;
+    color: #fff;
 }

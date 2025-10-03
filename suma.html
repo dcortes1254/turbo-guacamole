@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Suma</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <h1>COLEGIO BOLÍVAR</h1>
+                <h2 class="slogan">Creating the future together!</h2>
+            </header>
+            <div class="card">
+                <h2 class="app-title">Práctica de Sumas del 0 al 10</h2>
+                <div class="operation">
+                    <span id="num1">?</span>
+                    <span class="op">+</span>
+                    <span id="num2">?</span>
+                    <span class="op">=</span>
+                    <span id="resultado">?</span>
+                </div>
+                <input type="number" name="answer" id="answer" placeholder="Escribe tu respuesta" class="input-answer">
+                <button onclick="revisar()" class="btn">Verificar</button>
+                <button onclick="generarPregunta()" class="btn">Siguiente Pregunta</button>
+                <div id="result" class="feedback"></div>
+                <div id="streak" class="streak">Racha: 0</div>
+            </div>
+            <footer class="footer">
+                <p>@2025 Colegio Bolivar - V1.0</p>
+            </footer>
+        </div>
+        <script>
+            let num1, num2;
+            let streakCount = 0;
+
+            function generateRandomNumber(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            function generarPregunta() {
+                num1 = generateRandomNumber(0, 9);
+                num2 = generateRandomNumber(0, 9);
+                document.getElementById("num1").textContent = num1;
+                document.getElementById("num2").textContent = num2;
+                document.getElementById("resultado").textContent = "?";
+                document.getElementById("answer").value = "";
+                document.getElementById("result").textContent = "";
+                document.getElementById("result").className = "feedback";
+            }
+
+            function revisar() {
+                let userAnswer = parseInt(document.getElementById("answer").value);
+                let resultado = document.getElementById("resultado");
+                let resultText = document.getElementById("result");
+                if (userAnswer === num1 + num2) {
+                    resultado.textContent = userAnswer;
+                    resultText.textContent = "¡Correcto!";
+                    resultText.className = "feedback success";
+                    streakCount++;
+                } else {
+                    resultado.textContent = "?";
+                    resultText.textContent = "Incorrecto, intenta de nuevo.";
+                    resultText.className = "feedback danger";
+                    streakCount = 0;
+                }
+                document.getElementById("streak").textContent = "Racha: " + streakCount;
+            }
+
+            window.onload = generarPregunta;
+        </script>
+    </body>
+</html>
